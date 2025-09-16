@@ -8,6 +8,15 @@ meal amount (without tax).  The output from your program should include
 both the tax and the tip.  Format the output so that all of the values
 are displayed using two decimal places.  (17 lines)
 """
+"""
+def TaxAndTipEquation ():
+    Cost = float(input("How much did your meal cost?:"))
+    CostWithTax = (Cost*1.057)
+    Tip = (Cost*0.18)
+    ActualCost = round(CostWithTax+Tip, 2)
+    print("$",ActualCost)
+TaxAndTipEquation()
+"""
 
 """
 Exercise 7:  Sum of the First n Positive Integers
@@ -17,6 +26,14 @@ first n positive integers can be computed using the formula:
 sum = (n*(n+1))/2
 (12 lines)
 """
+"""
+def SumOf():
+    n = float(input("number:"))
+    sum = ((n*(n+1))/2)
+    print(sum) 
+SumOf()
+"""
+
 
 """
 Exercise 8:  Widgets and Gizmos
@@ -26,7 +43,13 @@ the number of gizmos in an order from the user.  Then your program should
 compute and display the total weight of the order.  (15 lines)
 
 """
-
+"""
+def GizmosPurchase ():
+    gizmos = float(input("how many gizmos(es) did you order?:"))
+    weight = int(gizmos*112)
+    print(weight,"g")
+GizmosPurchase()    
+"""
 """
 Exercise 9:  Compound Interest
 Pretend that you have just opened a new savings account that earns 4 percent
@@ -37,6 +60,19 @@ your program should compute and display the amount in the savings account after
 1, 2, and 3 years.  Display each amount so that it is rounded to 2 decimal 
 places.  (19 lines)
 """
+"""
+def CompoundInterest():
+    SavingsAccount = float(input("How much money is in the account?:"))
+    SavAcc1= round(SavingsAccount*1.04,2)
+    SavAcc2= round(SavAcc1*1.04,2)
+    SavAcc3= round(SavAcc2*1.04,2) 
+    print("after 1 year:", SavAcc1)
+    print("after 2 years:", SavAcc2)
+    print("after 3 years:",SavAcc3)
+CompoundInterest()
+"""
+
+    
 
 """
 Exercise 10:  Arithmetic
@@ -53,6 +89,17 @@ should compute and display:
 Hint:  you will probably find the log10 function in the math module helpful
 for computing the second last item in the list.
 """
+a= float(input("what is a?:"))
+b= float(input("what is b?:"))
+sumab= a+b
+difab= a-b
+proab= a*b
+quoab= a/b
+remab= a%b
+import math 
+relog= math.log10(a)
+atob= a**b
+print(sumab, difab, proab, quoab, remab, relog, atob)
 
 if __name__ == "__main__":
     print("Hi there!")
