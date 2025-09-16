@@ -9,6 +9,13 @@ research skills to determine how to convert from MPG to L/100km.
 Then create a program that reads a value from the user in American units
 and display the equivalent fuel efficiency in Canadian units.
 """
+"""
+def MPGtoL100calc():
+    MPG= float(input("what is your MPG"))
+    L100km = 235.215/MPG
+    print(L100km) 
+MPGtoL100calc()
+"""
 
 """
 Exercise 12:  Distance Between Two Points on Earth
@@ -36,19 +43,23 @@ need to convert the user's input from degrees to radians before computing
 the distance with the formula discussed previously.  The math module 
 contains a function named RADIANS which converts from degrees to radians.
 """
+"""
+def distwopoint():
+    t1= float(input("what is the latitude of the first point?"))
+    g1= float(input("what is the longitude of the first point?"))
+    t2= float(input("what is the latitude of the second point?"))
+    g2= float(input("what is the longitude of the second point?"))
+    import math 
+    Pi= math.pi
+    t1= math.radians(t1)
+    g1= math.radians(g1)
+    t2= math.radians(t2)
+    g2= math.radians(g2)
+    distance= 637.01*math.acos(math.sin(t1)*math.sin(t2)*math.cos(t1)*math.cos(t2)*math.cos(g1-g2))
+    print(distance, "km")
+distwopoint()
+"""
 
-def earthDistance():
-    t1 = float(input("t1: "))
-    g1 = float(input("g1: "))
-    t2 = float(input("t2: "))
-    g2 = float(input("g2: "))
-    #distance = 6371.01 x arccos(sin(t1) x sin(t2) + cos(t1) x cos(t2) x cos(g1-g2))
-
-    distance = 6371.01 * math.a23
-    cos(math.sin(t2) + math.cos(t1) * math.cos(t2) * math.cos(g1-g2))
-    print(distance)
-
-earthDistance()
 """
 Exercise 13: Making Change
 Consider the software that runs on a self-checkout machine.  One task that
@@ -68,7 +79,24 @@ The two dollar coin, referred to as a toonie, was introduced 9 years later.
 It's name is derived from the combination of the number two
 and the name of the loonie.
 """
-
+"""
+def MakingChange():
+    change= int(input("how much change in cents is needed?"))
+    pennies= 1
+    nickles= 5
+    dimes= 10
+    quarters= 25
+    loonies= 100
+    toonies= 200
+    numtoo= change//toonies 
+    numloo= (change%toonies)//loonies 
+    numqua= (change%loonies)//quarters
+    numdim= (change%quarters)//dimes
+    numnic= (change%dimes)//nickles 
+    numpen= (change%nickles)//pennies 
+    print("toonies:", numtoo, "loonies:", numloo, "quarters:", numqua, "dimes:", numdim, "nickles:", numnic, "pennies:", numpen)
+MakingChange()
+"""
 """
 Exercise 14:  Height Units
 Many people think about their height in feet and inches, even in some
@@ -80,7 +108,15 @@ compute and display the equivalent number of centimeters.
 *** HINT ***
 One foot is 12 inches.  One in ch is 2.54 centimeters.
 """
-
+"""
+def HeightUnits():
+    feet= int(input("How many feet tall are you?"))
+    inches= int(input("How many inches are in your height?"))
+    overinch= (feet*12)+inches 
+    centi= overinch*2.54 
+    print(centi,"cm")
+HeightUnits()
+"""
 """
 Exercise 15:  Distance Units
 In this exercise, you will create a program that begins by reading
@@ -91,6 +127,15 @@ the equivalent distance in inches, yards, and miles.
 1 inch = 0.02777778 yards = 0.00001578 miles
 36 inches = 1 yard = 0.00056818 miles
 63360 inches = 1760 yards = 1 mile
+"""
+"""
+def DistanceUnits():
+    feet= float(input("how many feet?:"))
+    inches= feet*12
+    yards=feet/3
+    miles=feet/5280
+    print("inches:",inches,"yards:",yards,"miles:",miles)
+DistanceUnits()
 """
 
 if __name__ == "__main__":
