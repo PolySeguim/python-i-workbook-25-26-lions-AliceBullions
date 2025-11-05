@@ -1,4 +1,6 @@
 
+import math
+
 """
 Exercise 16:  Area and Volume
 Write a program that begins by reading a radius, r, from the user.  The program 
@@ -9,6 +11,14 @@ module in your calculations.
 Hint:  The are of  circle is computed using the formula area = pi*r**2.  The 
 volume of a sphere is computed using the formula volume = 4/3 * pi * r**3.
 """
+def AreaAndVolume():
+    r=float(input("what is the radius"))
+    pi=math.pi
+    area= pi*r**2
+    volume= 4/3*pi*r**3
+    print("The area is:", area)
+    print("The volume is:", volume)
+
 
 """
 Exercise 17:  Heat Capacity
@@ -36,6 +46,17 @@ and kilowatt hours to complete the last part of this exercise.
 (25 lines)
 """
 
+def heatCapacity():
+    m= float(input("What is the mass in grams?:"))
+    deltaT= float(input("How many degrees does the material change in Celsius?:"))
+    C= 4.186
+    q= m*C*deltaT
+    print(q)
+    k= C*2.77778e-7
+    elec= k*8.9
+    print("It costs:", elec, "cents")
+
+
 """
 Exercise 18:  Volume of a Cylinder
 The volume of a cylinder can be computed by multiplying the area of its 
@@ -44,6 +65,12 @@ cylinder, along with its height, from the user and computes its volume.
 Display the result rounded to one decimal place.
 (15 lines)
 """
+def volumeOfCylinder():
+    r= float(input("What is the radius?:"))
+    h= float(input("What is the height?:"))
+    pi= math.pi
+    v= pi*r**2 *h 
+    print(v)
 
 """
 Exercise 19:  Free Fall
@@ -51,10 +78,17 @@ Create a program that determines how quickly an object is traveling when it
 hits the ground.  The user will enter the height from which the object is 
 dropped in meters (m).  Because the object is dropped its initial speed is 
 0 m/s.  Assume that the acceleration due to gravity is 9.8 m/s**2.  You can 
-use the formula vf = (vi**2 + 2ad)**(1/2) to compute the final speed vf, 
+use the formula velocity final = (velocity initial**2 + 2accel*d)**(1/2) to compute the final speed vf, 
 when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
+def freeFall():
+    d=float(input("What is the height in meters?:"))
+    vi=0
+    a= 9.8**2
+    vf= (vi**2 + 2*a*d)**(1/2)
+    print(vf)
+
 
 
 """
@@ -80,6 +114,16 @@ by 5/9 and then add 273.15 to it.
 
 (19 lines)
 """
+def idealGasLaw():
+    P=float(input("what is the pressure in Pascals?:"))
+    V= float(input("what is the volume in liters?:"))
+    R= 8.314
+    T= float(input("What is the temperature in Kelvin?"))
+    n=(P*V)/(R*T)
+    print(n)
+idealGasLaw()
+
+
 
 if __name__ == "__main__":
     print("Hi there!")

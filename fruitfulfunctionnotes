@@ -1,0 +1,169 @@
+"""
+header
+"""
+#all import statements 
+import math 
+
+"""
+fruitful function 
+def func-name(number, id):
+
+void function->does not return
+fruitful function -> returns
+"""
+
+#Global Variability
+f_name = ""
+
+#void function
+def setName(fname):
+    #fname is the local function variable 
+    #f_name is the global function varibale 
+    f_name.set(fname) 
+    print(fname)
+
+#fruitful functions 
+def getName():
+    return f_name
+
+"""
+sum(list of number)
+fuction  <- adds up all the numeric values with in a list 
+return int sum
+author: Alice (10-08-25)
+"""
+def sum(numbers):
+    sum=0
+    for i in numbers:
+        sum+= i #+= -> sum = sum+i
+        #print(sum)
+    return sum 
+
+def absValue(x):
+    if x<0:
+        return -x #if the number x meets the confition (x is negative)
+    return x
+
+def absoluteValue(x):
+    if x<0:
+        return -x #the return statement exits the function 
+    else:
+        return x
+    
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2-x1)**2+ (y2-y1)**2)
+    #return ((x2-x1)**2+ (y2-y1)**2)**(0.5)
+
+#Boolean functuons return a true or false
+#examples of boolean functions are:
+# ___ is age 16?
+# ___ is pwd correct?
+
+#Fun fct boolean functions are normally named is ____
+
+def isDivisible(x, y):
+    if (x%y==0):
+        return True 
+    else:
+        return False
+
+"""
+num1= 1,2,3,4,5,6,7,8,9,10,10
+num2= 2.3,4.2,6.2,7.3
+#function calls 
+
+test1 = sum(num1)
+print(test1)
+
+#absoute value 
+
+#print(absValue(-23))
+"""
+
+#distance formule 
+#print(distance(1,2,3,4))
+
+print(isDivisible(5, 2))
+print(isDivisible(12, 4))
+print(isDivisible(15, 5))
+
+#a fruitful compare function that compare two integers
+#and 
+# ***returns the largest integers
+def largeint():
+    int1=int(input("first number:"))
+    int2=int(input("second number:"))
+    if(int1>int2):
+        print("the first number is largest",int1)
+    elif(int2>int1):
+        print("the second number is largest", int2)
+    else:
+        print("the numbers are equal")
+
+
+#a fruitful hypotenuse function that 
+# ***returns the value of 
+#the hypotenuse given the a and b value  
+def hyp(aval, bval):
+  
+    csquare= (bval**2)+(aval**2)
+    cval= csquare**(1/2)
+    #print("the hypotenuse is", cval)
+    return cval
+
+#Testing Zone
+"""
+aval=float(input("what is the a value?"))
+bval= float(input("what is the b value?"))
+print(hyp(aval, bval))
+print(hyp(3,4))
+"""
+#a fruitful function slope function the 
+# ***returns the slope of a line 
+#given 4 parameters (x1, y1, x2, y2)
+def slope(x1,x2,y1,y2):
+    slopeval=(y2-y1)/(x2-x1)
+    return slopeval
+"""
+x1=float(input("what is x1"))
+x2=float(input("what is x2"))
+y1=float(input("what is y1"))
+y2=float(input("what is y2"))
+slope(x1,x2,y1,y2)
+"""
+#a fruitful intercept function that will find the y-intercept 
+#given the two points (x1, y1, x2, y2)
+#*** returns the y-int 
+#*** This functin should call the slope function in order to 
+#*** calculate the y-intercept or b-value 
+def y_int(x1,x2,y1,y2):
+    m=slope(x1,x2,y1,y2)
+    b=y1-m*x1
+    return b
+
+#print(y_int(4,8,4,8))
+
+#A fruitful function that will calculate whether a number is 
+# a factor of another number
+#***Is 3 a factor of 9
+#***returns a BOOLEAN (True or False)
+def factor(val1, val2):
+    if val2%val1==0:
+        return True
+    else:
+        return False
+#print(factor(3,9))
+
+
+
+#A fruitful function that will calculate whether a number is 
+# a factor of another number
+#***Is 12 a multiple of 9
+#***returns a BOOLEAN (True or False)
+def multiple(val2, val1):
+    if val1%val2==0:
+        return True 
+    else:
+        return False
+#print(multiple(12, 9))
+#print(multiple(12, 24))
