@@ -1,0 +1,120 @@
+"""
+Exercise 34: Even or Odd?
+Write a program that reads an integer from the user.
+Then your program should display a message indicating whether
+the integer is even or odd
+"""
+
+#void function- does not return any value- just performs action
+"""
+def evenOdd():
+    #commmunication is the most volitaile part of the code
+    num=int(input("enter an integer"))
+    if num%2==0:
+        print(num, "is even")
+    else:
+        print(num, "is odd")
+ 
+def testSuite():
+    for i in range(5):
+        evenOdd()
+"""
+
+
+
+"""
+Exercise 36: Vowel or consonant
+In this exercise you will create a program that reads a letter
+of the alphabet from the user. If the user enters a, e, i, o, or u
+then your program should display a message indicating that the
+entered letter is a vowel. If the user enters y then your program
+should display a message indicating that sometimes y is a vowel, and
+sometimes y is a consonant. Otherwise your program should display
+a message indicating that the letter is a consonant.
+"""
+"""
+def vowelCon():
+    letter=input("input one letter")
+    letter= letter.upper()
+    if letter == "A":
+        print(letter, "is vowel")
+    elif letter == "E":
+        print(letter, "is a vowel")
+    elif letter == "I":
+        print (letter, "is a vowel")
+    elif letter == "O":
+        print(letter, "is a vowel")
+    elif letter == "U":
+        print(letter, "is a vowel")
+    else:
+        print(letter, "is a consonant")
+vowelCon()
+"""
+"""
+Exercise 40: Name that triangle
+A triangle can be classified based on the lengths of its sides as
+equilateral, isosceles, or scalene. All 3 sides of an equilateral
+triangle have the same length. As isosceles triangle has two sides
+that are the same length, and a third side that is a different length.
+If all of the sides have different lengths then the triangle is scalene.
+Write a program that reads the lengths of 3 sides of a triangle from the
+user. Display a message indicating the type of triangle
+****** CHALLENGE:
+Perform the same task as above but with angles and not sides.
+"""
+"""
+def triangleType():
+    angle1=float(input("What is the length of angle 1?"))
+    angle2=float(input("What is the length of angle 2?"))
+    angle3=float(input("What is the length of angle 3?"))
+    if angle1==angle2==angle3:
+        print("the triangle is equilateral")
+    elif angle1==angle2:
+        print("the triangle is isosceles")
+    elif angle2==angle3:
+        print("the triangle is isoceles")
+    elif angle1==angle3:
+        print("the triangle is isosceles")
+    else:
+        print("the triangle is scalene")
+
+triangleType()
+"""
+"""
+Exercise 55: Cell Phone Bill
+A particular cell phone plan includes 50 minutes of air time and
+50 text messages for $15.00 a month. Each additional minute of
+air time costs $0.25 , while additional text messages cost $0.15
+each. All cell phone bills include an additional charge of $0.44
+to support 911 call centers, and teh entire bill (including the
+911 charge) is subject to a 5 percent sales tax.
+Write a program that reads the number of minutes and text messages
+used in a month from the user. Display the base charge, additional
+minutes charge (if any), additional text message charge (if any),
+the 911 fee, tax and total bill amount. Only display the additional
+minute and text charges if the user incurred costs in these
+categories. Ensure that all of the charges are displayed using 2
+decimal points
+"""
+
+def phoneBill():
+    minutes=float(input("how many minutes did you spend?"))
+    texts=int(input("how many texts did you send?"))
+    print("base charge is $15")
+    
+    if (minutes-50)>0:
+        minutes=round((minutes-50)*.25, 2)
+        print("$",minutes, "extra charge for minutes")
+    else:
+        minutes=0
+    if (texts-50)>0:
+        texts=round((texts-50)*.15, 2)
+        print("$", texts, "extra charge for texts")
+    else:
+        texts=0
+    price= round((15+minutes+texts+.44)*1.05, 2)
+    print("911 fee =$0.44")
+    print("tax = 5%")
+    print("$",price, "is the price of your Phone Bill")
+
+phoneBill()
